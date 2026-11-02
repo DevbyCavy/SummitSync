@@ -1,0 +1,60 @@
+{
+  "highlights": [
+    {
+      "id": "mice-publication",
+      "title": "MICE Publication",
+      "summary": "Industry stories, expert insights and inspiring profiles spotlighting the people and businesses shaping the MICE landscape."
+    },
+    {
+      "id": "mice-calendar",
+      "title": "MICE Calendar",
+      "summary": "Discover the conferences, exhibitions, summits and corporate events defining the industry's calendar."
+    },
+    {
+      "id": "industry-directory",
+      "title": "Industry Directory",
+      "summary": "A connected network of venues, event planners, suppliers, speakers and professionals driving the business events industry."
+    },
+    {
+      "id": "industry-insights",
+      "title": "Industry Insights",
+      "summary": "Stay informed with weekly updates, emerging trends, industry opportunities and developments from across the MICE sector."
+    },
+    {
+      "id": "networking-events",
+      "title": "Networking & Events",
+      "summary": "Creating opportunities for industry professionals to connect, collaborate and build meaningful business relationships."
+    },
+    {
+      "id": "industry-recognition",
+      "title": "Industry Recognition",
+      "summary": "Celebrating the individuals and organisations making a lasting impact through excellence and innovation in MICE."
+    }
+  ],
+  "cards": [
+    {
+      "id": "media-publishing",
+      "title": "Media & Publishing",
+      "summary": "Showcasing the stories, insights, people and organisations shaping Zimbabwe's MICE industry.",
+      "image": "/images/services/media.webp",
+      "linkLabel": "Read the magazine",
+      "linkTo": "magazine"
+    },
+    {
+      "id": "industry-connections",
+      "title": "Industry Connections",
+      "summary": "Bringing event professionals, venues, suppliers and decision-makers together through a connected industry platform.",
+      "image": "/images/services/connections.webp",
+      "link": "/contact",
+      "linkLabel": "Get connected"
+    },
+    {
+      "id": "events-recognition",
+      "title": "Events & Recognition",
+      "summary": "Celebrating industry excellence and creating meaningful opportunities for networking, collaboration and recognition.",
+      "image": "/images/services/events.webp",
+      "linkLabel": "View the calendar",
+      "linkTo": "calendar"
+    }
+  ]
+}

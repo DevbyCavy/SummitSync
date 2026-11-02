@@ -1,0 +1,6 @@
+[
+  {"id":"evt-001","name":"Zimbabwe MICE Industry Forum","startDate":"2026-11-12","endDate":"2026-11-14","venue":"TBC","city":"Harare","category":"Conference","link":"","_sample":"TODO(open): sample event, replace with real listings"},
+  {"id":"evt-002","name":"Venues & Suppliers Expo","startDate":"2026-12-03","endDate":"2026-12-04","venue":"TBC","city":"Harare","category":"Exhibition","link":"","_sample":"TODO(open): sample event, replace with real listings"},
+  {"id":"evt-003","name":"Event Professionals Networking Breakfast","startDate":"2027-01-21","endDate":"2027-01-21","venue":"TBC","city":"Harare","category":"Networking","link":"","_sample":"TODO(open): sample event, replace with real listings"},
+  {"id":"evt-000","name":"Business Events Leadership Roundtable","startDate":"2026-09-10","endDate":"2026-09-10","venue":"TBC","city":"Harare","category":"Conference","link":"","_sample":"TODO(open): sample event, replace with real listings"}
+]

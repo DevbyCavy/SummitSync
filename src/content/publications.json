@@ -1,0 +1,33 @@
+{
+  "eyebrow": "Our Publications",
+  "heading": "Stories That Shape the Industry.",
+  "description": "Discover the publications and editorial content bringing Zimbabwe's MICE industry into focus.",
+  "items": [
+    {
+      "id": "magazine",
+      "title": "Summit Sync Magazine",
+      "tag": "Flagship · Quarterly · Digital",
+      "text": "Our flagship quarterly digital publication featuring industry news, destination spotlights, expert insights, interviews and emerging trends.",
+      "cover": "",
+      "coverLines": ["Destination Spotlights", "Expert Insights", "Industry Interviews"],
+      "linkTo": "magazine",
+      "cta": "Read the Magazine"
+    },
+    {
+      "id": "weekly",
+      "title": "Summit Sync Weekly",
+      "tag": "Weekly · Newsletter",
+      "text": "Your regular dose of MICE industry updates, news, opportunities and developments worth following.",
+      "action": "subscribe",
+      "cta": "Subscribe free"
+    },
+    {
+      "id": "features",
+      "title": "Special Features & Industry Spotlights",
+      "tag": "Editorial · Spotlights",
+      "text": "In-depth features highlighting influential industry professionals, leading venues, event destinations, businesses and noteworthy events.",
+      "linkTo": "features",
+      "cta": "Read the features"
+    }
+  ]
+}

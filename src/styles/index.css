@@ -1,0 +1,354 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Outfit variable font (latin, weights 100–900) in a single self-hosted file; preloaded in index.html. */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/outfit-latin-var.woff2') format('woff2-variations'), url('/fonts/outfit-latin-var.woff2') format('woff2');
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* offset for sticky header */
+  }
+  body {
+    @apply bg-night-900 font-sans font-light text-white/90 antialiased;
+  }
+  /* Minimal, editorial headings: large and light. */
+  h1,
+  h2 {
+    @apply font-display font-light tracking-tight text-white;
+  }
+  ::selection {
+    @apply bg-brand-orange text-white;
+  }
+  :focus-visible {
+    outline: 2px solid #f57627;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 md:px-10;
+  }
+  .section {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+  /* Small spaced caps label (orange on night passes AA at small sizes). */
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.25em] text-brand-orange;
+  }
+  /* "LEARN MORE"-style text link. */
+  .link-caps {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-white transition-colors hover:text-brand-orange;
+  }
+  .h1-hero {
+    font-size: clamp(2.75rem, 7vw, 6.5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .h2-section {
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    line-height: 1.15;
+  }
+  .lead {
+    @apply text-lg font-normal leading-relaxed text-white md:text-xl;
+  }
+  .muted {
+    @apply text-sm leading-relaxed text-white/60;
+  }
+  .glass {
+    @apply border border-white/15 bg-white/10 backdrop-blur-md;
+  }
+  .field {
+    @apply w-full rounded-full border border-white/15 bg-white/5 px-5 py-3 font-normal text-white placeholder:text-white/40 focus:border-brand-orange focus:outline-none;
+  }
+  textarea.field {
+    @apply rounded-2xl;
+  }
+  select.field option {
+    @apply bg-night-800 text-white;
+  }
+  .field-error {
+    @apply mt-1 pl-5 text-sm text-red-300;
+  }
+  /* Primary-button shine: a soft highlight sweeps across on hover. */
+  .btn-shine {
+    @apply relative overflow-hidden;
+  }
+  .btn-shine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 0.7s var(--ease-out);
+    pointer-events: none;
+  }
+  .btn-shine:hover::after {
+    transform: translateX(120%);
+  }
+  /*
+   * Bigger touch target without changing layout: an invisible area around small text links.
+   * Built into .link-caps; add .tap-area to other small links.
+   */
+  .tap-area,
+  .link-caps {
+    position: relative;
+  }
+  .tap-area::before,
+  .link-caps::before {
+    content: '';
+    position: absolute;
+    inset: -12px -8px;
+  }
+  /* Horizontal swipe rows (phone carousels) without a visible scrollbar. */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Arrow icons inside caps links nudge toward their destination. */
+  .link-caps svg {
+    transition: transform 0.3s var(--ease-out);
+  }
+  .link-caps:hover svg {
+    transform: translate(2px, -2px);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Motion system
+ * ------------------------------------------------------------------------ */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/*
+ * Scroll reveals: add data-reveal="up|fade|clip|line|scale" to any element; App's
+ * useRevealOnScroll() adds .is-visible when it enters the viewport.
+ * Stagger with style={{ '--d': '120ms' }}.
+ */
+[data-reveal] {
+  transition:
+    opacity 0.9s var(--ease-out),
+    transform 0.9s var(--ease-out);
+  transition-delay: var(--d, 0ms);
+}
+[data-reveal='up']:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(32px);
+}
+[data-reveal='fade']:not(.is-visible) {
+  opacity: 0;
+}
+[data-reveal='scale']:not(.is-visible) {
+  opacity: 0;
+  transform: scale(0.94);
+}
+/*
+ * Image unveil: wipes up from the bottom edge. The clip goes on the *child*, because
+ * IntersectionObserver treats a fully clipped element as never visible. Give the
+ * data-reveal="clip" element a single wrapper child with no transition classes of its own.
+ */
+[data-reveal='clip'] > * {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1.2s var(--ease-out) var(--d, 0ms);
+}
+[data-reveal='clip']:not(.is-visible) > * {
+  clip-path: inset(100% 0 0 0);
+}
+/* Children that animate when their revealed ancestor appears (delay via --cd). */
+[data-reveal]:not(.is-visible) .reveal-child {
+  opacity: 0;
+}
+[data-reveal].is-visible .reveal-child {
+  animation: fade-up 1s var(--ease-out) var(--cd, 0ms) both;
+}
+/* Hairline draws from the left. */
+[data-reveal='line'] {
+  transform-origin: left center;
+}
+[data-reveal='line']:not(.is-visible) {
+  transform: scaleX(0);
+}
+
+/* Orange full stop that pops in after its revealed parent (MICE letters). */
+[data-reveal]:not(.is-visible) .pop-dot {
+  opacity: 0;
+}
+[data-reveal].is-visible .pop-dot {
+  animation: pop-in 0.6s var(--ease-out) calc(var(--d, 0ms) + 450ms) both;
+}
+
+/* Load-time entrances (no scroll needed). Delay via --d. */
+@keyframes rise {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes header-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes ken-burns {
+  from {
+    transform: scale(1.15);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes text-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes text-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.anim-rise {
+  display: inline-block;
+  animation: rise 1.1s var(--ease-out) var(--d, 0ms) both;
+}
+.anim-fade-up {
+  animation: fade-up 1s var(--ease-out) var(--d, 0ms) both;
+}
+.anim-fade-in {
+  animation: fade-in 1.2s ease var(--d, 0ms) both;
+}
+.anim-slide-in-right {
+  animation: slide-in-right 1.1s var(--ease-out) var(--d, 0ms) both;
+}
+.anim-header-in {
+  animation: header-in 0.9s var(--ease-out) 0.15s both;
+}
+.anim-ken-burns {
+  animation: ken-burns 2.8s var(--ease-out) both;
+}
+/* Pops in, then keeps a gentle bob to invite scrolling. */
+.anim-scroll-cue {
+  animation:
+    pop-in 0.7s var(--ease-out) var(--d, 0ms) both,
+    bob 2.4s ease-in-out calc(var(--d, 0ms) + 0.8s) infinite;
+}
+.anim-text-next {
+  animation: text-from-right 0.6s var(--ease-out) both;
+}
+.anim-text-prev {
+  animation: text-from-left 0.6s var(--ease-out) both;
+}
+/* Page transition: fade only, so no transform lingers on the page wrapper. */
+.anim-page {
+  animation: fade-in 0.6s ease both;
+}
+.marquee-track {
+  animation: marquee 45s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+  .marquee-track {
+    animation: none !important;
+  }
+}

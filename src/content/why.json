@@ -1,0 +1,27 @@
+{
+  "eyebrow": "Why Summit Sync",
+  "heading": "More Than Visibility. A Place to Connect.",
+  "description": "Summit Sync gives businesses and professionals within the MICE industry a dedicated platform to build visibility, reach relevant audiences and become part of a growing industry network.",
+  "points": [
+    {
+      "icon": "target",
+      "title": "A Focused Industry Audience",
+      "text": "Connect with event professionals, corporate decision-makers, hospitality leaders, institutions and MICE suppliers."
+    },
+    {
+      "icon": "megaphone",
+      "title": "Visibility Beyond Advertising",
+      "text": "Showcase your brand through editorial features, publication placements, directory listings and digital exposure."
+    },
+    {
+      "icon": "network",
+      "title": "Meaningful Industry Connections",
+      "text": "Become part of a platform that brings together venues, suppliers, planners, destinations and decision-makers."
+    },
+    {
+      "icon": "trending-up",
+      "title": "A Platform for Industry Growth",
+      "text": "Stay informed, discover opportunities and participate in the conversations shaping the future of Zimbabwe's MICE sector."
+    }
+  ]
+}
