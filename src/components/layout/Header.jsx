@@ -39,9 +39,9 @@ export default function Header() {
         solid ? 'border-b border-white/10 bg-night-900/80 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
-      <div className="container-content flex h-20 items-center justify-between gap-6">
+      <div className="container-content flex h-24 items-center justify-between gap-6">
         <Link to="/" aria-label="Summit Sync — home" onClick={(e) => scrollToSection(e, 'home', pathname)}>
-          <Logo light className="h-14" />
+          <Logo light className="h-20" />
         </Link>
 
         <nav aria-label="Main" className="hidden lg:block">
@@ -52,7 +52,7 @@ export default function Header() {
                   to={id === 'home' ? '/' : `/#${id}`}
                   onClick={(e) => scrollToSection(e, id, pathname)}
                   aria-current={active === id ? 'location' : undefined}
-                  className={`relative px-4 py-1.5 text-sm transition-colors ${
+                  className={`relative px-4 py-1.5 text-base transition-colors ${
                     active === id ? 'font-medium text-brand-orange' : 'text-white/80 hover:text-white'
                   }`}
                 >

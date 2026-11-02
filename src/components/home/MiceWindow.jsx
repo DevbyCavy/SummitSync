@@ -34,7 +34,7 @@ export default function MiceWindow({ className = '', style }) {
 
   return (
     <div
-      className={`glass flex w-full max-w-sm flex-col rounded-2xl p-4 ${className}`}
+      className={`glass flex w-full max-w-md flex-col rounded-2xl p-5 sm:p-6 ${className}`}
       style={style}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -42,7 +42,7 @@ export default function MiceWindow({ className = '', style }) {
       onBlur={() => setPaused(false)}
     >
       <div className="flex items-center justify-between">
-        <p className="text-[0.65rem] font-medium uppercase tracking-[0.25em] text-brand-orange">
+        <p className="text-xs font-medium uppercase tracking-[0.25em] text-brand-orange">
           MICE Window · {event ? 'Up next' : 'Calendar'}
         </p>
         {upcoming.length > 1 && (
@@ -76,18 +76,18 @@ export default function MiceWindow({ className = '', style }) {
         >
           {/* key → re-mount on change so the slide-in animation replays */}
           <span key={event.id} className="anim-text-next flex w-full gap-4">
-            <span className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-xl bg-brand-orange text-white">
-              <span className="text-2xl font-light leading-none">{dateBadge(event.startDate).day}</span>
-              <span className="mt-1 text-[0.6rem] font-medium tracking-[0.2em]">{dateBadge(event.startDate).month}</span>
+            <span className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-xl bg-brand-orange text-white">
+              <span className="text-3xl font-light leading-none">{dateBadge(event.startDate).day}</span>
+              <span className="mt-1 text-xs font-medium tracking-[0.2em]">{dateBadge(event.startDate).month}</span>
             </span>
             <span className="flex min-w-0 flex-col">
-              <span className="line-clamp-2 font-normal leading-snug text-white">{event.name}</span>
-              <span className="mt-0.5 inline-flex items-center gap-1 truncate text-xs text-white/60">
+              <span className="line-clamp-2 text-lg font-normal leading-snug text-white">{event.name}</span>
+              <span className="mt-1 inline-flex items-center gap-1 truncate text-sm text-white/60">
                 <MapPin size={12} aria-hidden="true" className="shrink-0" />
                 {[event.venue !== 'TBC' && event.venue, event.city].filter(Boolean).join(', ')}
                 {event.category && ` · ${event.category}`}
               </span>
-              <span className="mt-1.5 inline-flex items-center gap-1.5 text-xs text-brand-orange">
+              <span className="mt-2 inline-flex items-center gap-1.5 text-sm text-brand-orange">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-orange" aria-hidden="true" />
                 {countdown(event.startDate, event.endDate)}
                 <ArrowUpRight
@@ -103,7 +103,7 @@ export default function MiceWindow({ className = '', style }) {
         <p className="mt-3 text-sm text-white/70">No upcoming events listed yet. Organising one? Get it on the calendar.</p>
       )}
 
-      <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-3 text-[0.65rem] font-medium uppercase tracking-[0.2em]">
+      <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-xs font-medium uppercase tracking-[0.2em]">
         <Link to={LIST_EVENT_URL} className="tap-area inline-flex items-center gap-1 text-white/80 hover:text-white">
           <Plus size={12} aria-hidden="true" /> List your event
         </Link>
