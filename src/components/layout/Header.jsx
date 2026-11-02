@@ -52,11 +52,17 @@ export default function Header() {
                   to={id === 'home' ? '/' : `/#${id}`}
                   onClick={(e) => scrollToSection(e, id, pathname)}
                   aria-current={active === id ? 'location' : undefined}
-                  className={`rounded-full px-4 py-1.5 text-sm transition-colors ${
-                    active === id ? 'bg-white font-medium text-night-900' : 'text-white/80 hover:text-white'
+                  className={`relative px-4 py-1.5 text-sm transition-colors ${
+                    active === id ? 'font-medium text-brand-orange' : 'text-white/80 hover:text-white'
                   }`}
                 >
                   {label}
+                  <span
+                    aria-hidden="true"
+                    className={`absolute inset-x-4 -bottom-0.5 h-0.5 rounded-full bg-brand-orange transition-transform duration-300 ${
+                      active === id ? 'scale-x-100' : 'scale-x-0'
+                    }`}
+                  />
                 </Link>
               </li>
             ))}
