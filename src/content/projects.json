@@ -1,0 +1,71 @@
+[
+  {
+    "id": "un-tourism-forum-2024",
+    "title": "First UN Tourism Regional Forum on Gastronomy Tourism for Africa",
+    "date": "2024-07-26",
+    "location": "Victoria Falls, Zimbabwe",
+    "cover": "/images/projects/un-forum-cover.webp",
+    "gallery": [],
+    "description": "A regional gathering of tourism ministers, chefs and industry leaders exploring gastronomy as a driver of African tourism, held 26–28 July 2024."
+  },
+  {
+    "id": "expo-cope",
+    "title": "Exhibition Stand: Cope",
+    "date": "2026-09-17",
+    "location": "Harare, Zimbabwe",
+    "cover": "/images/projects/expo-cope.webp",
+    "gallery": [],
+    "description": "A sleek, branded stand on the exhibition floor of the Insurance & Financial Services Expo, hosting one-on-one client meetings across both days.",
+    "_sample": "TODO(open): dummy details, replace with the real event name, date, location and description."
+  },
+  {
+    "id": "opening-ceremony",
+    "title": "Business Events Conference: Opening Ceremony",
+    "date": "2026-10-09",
+    "location": "Harare, Zimbabwe",
+    "cover": "/images/projects/opening-ceremony.webp",
+    "gallery": [],
+    "description": "Delegates rise for the national anthem as the annual business events conference opens, setting the tone for two days of industry dialogue.",
+    "_sample": "TODO(open): dummy details, replace with the real event name, date, location and description."
+  },
+  {
+    "id": "expo-wsafe",
+    "title": "Exhibition Stand: W-Safe",
+    "date": "2026-09-17",
+    "location": "Harare, Zimbabwe",
+    "cover": "/images/projects/expo-wsafe.webp",
+    "gallery": [],
+    "description": "An open, light-filled stand design with a central reception counter, welcoming visitors at the Insurance & Financial Services Expo.",
+    "_sample": "TODO(open): dummy details, replace with the real event name, date, location and description."
+  },
+  {
+    "id": "expo-emeritus",
+    "title": "Exhibition Stand: Emeritus",
+    "date": "2026-09-18",
+    "location": "Harare, Zimbabwe",
+    "cover": "/images/projects/expo-emeritus.webp",
+    "gallery": [],
+    "description": "Day two on the exhibition floor: a busy stand with digital displays and a dedicated meeting lounge for visiting delegates.",
+    "_sample": "TODO(open): dummy details, replace with the real event name, date, location and description."
+  },
+  {
+    "id": "expo-smre",
+    "title": "Exhibition Stand: SMRE",
+    "date": "2026-09-17",
+    "location": "Harare, Zimbabwe",
+    "cover": "/images/projects/expo-smre.webp",
+    "gallery": [],
+    "description": "A bold skyline backdrop and private meeting table made this stand a natural stop for partner conversations at the expo.",
+    "_sample": "TODO(open): dummy details, replace with the real event name, date, location and description."
+  },
+  {
+    "id": "expo-transact",
+    "title": "Exhibition Stand: TransAct",
+    "date": "2026-09-18",
+    "location": "Harare, Zimbabwe",
+    "cover": "/images/projects/expo-transact.webp",
+    "gallery": [],
+    "description": "Steady visitor traffic through a bright, brand-led stand on the final day of the Insurance & Financial Services Expo.",
+    "_sample": "TODO(open): dummy details; also confirm the exhibitor name."
+  }
+]

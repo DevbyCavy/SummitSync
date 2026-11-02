@@ -1,0 +1,12 @@
+Options -Indexes
+
+# Only the three endpoints are reachable; config, helpers, db, mailer and vendor are blocked.
+<FilesMatch "^(config|config\.example|db|helpers|mailer)\.php$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(vendor|cache)(/|$) - [F,L]
+  RewriteRule ^(composer\.(json|lock))$ - [F,L]
+</IfModule>

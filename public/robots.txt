@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# TODO(open): confirm production domain (§13.3)
+Sitemap: https://summitsync.co.zw/sitemap.xml

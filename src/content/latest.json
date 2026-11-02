@@ -1,0 +1,26 @@
+[
+  {
+    "id": "weekly-issue-12",
+    "type": "Weekly",
+    "title": "Summit Sync Weekly #12: The Q4 Events Outlook",
+    "date": "2026-10-27",
+    "location": "",
+    "excerpt": "What's on the calendar for the final quarter, new venue openings and the opportunities worth following before year-end.",
+    "image": "/images/services/media.webp",
+    "action": "subscribe",
+    "cta": "Get the Weekly",
+    "_sample": "TODO(open): dummy item, replace with real Weekly editions."
+  },
+  {
+    "id": "feature-victoria-falls",
+    "type": "Feature",
+    "title": "Spotlight: Victoria Falls, Africa's Gastronomy Tourism Stage",
+    "date": "2026-10-14",
+    "location": "Victoria Falls, Zimbabwe",
+    "excerpt": "How one of the continent's great destinations is positioning itself for food-led conferences and incentive travel.",
+    "image": "/images/projects/un-forum-cover.webp",
+    "linkTo": "features",
+    "cta": "Read the feature",
+    "_sample": "TODO(open): dummy item, replace with real features."
+  }
+]

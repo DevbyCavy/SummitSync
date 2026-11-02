@@ -1,0 +1,7 @@
+node_modules
+dist
+api/config.php
+api/vendor
+api/cache
+.env.local
+.claude/

@@ -1,0 +1,21 @@
+{
+  "name": "Summit Sync",
+  "tagline": "The Architects of MICE",
+  "description": "Summit Sync is a media and industry platform connecting and showcasing Zimbabwe's Meetings, Incentives, Conferences and Exhibitions (MICE) industry.",
+  "phone": "+263 00 000 0000",
+  "email": "info@summitsync.co.zw",
+  "location": "Harare, Zimbabwe",
+  "url": "https://summitsync.co.zw",
+  "socials": {
+    "linkedin": "",
+    "facebook": "",
+    "email": "mailto:info@summitsync.co.zw"
+  },
+  "links": {
+    "magazine": "",
+    "calendar": "",
+    "features": ""
+  },
+  "_links": "Magazine / MICE Calendar / Special Features URLs. Leave empty until ready (buttons show as \"coming soon\" and go nowhere). Use a full https:// URL for an external site (opens in a new tab), or a path like /magazine for a built-in page.",
+  "_todo": "TODO(open): confirm real phone, email, socials and domain (§13.3)"
+}
